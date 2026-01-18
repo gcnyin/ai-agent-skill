@@ -1,12 +1,16 @@
 ---
-name: git-mcp-commit
-description: 使用git提交commit。当用户要求"提交 commit"、"git 提交"、"提交代码"时触发。
-allowed-tools: git mcp, github mcp, bash
+name: git-commit
+description: 处理git提交操作。当用户要求"提交commit"、"git提交"、"提交代码"或类似请求时触发。适用于所有git提交场景，包括使用MCP工具、命令行或其他git客户端。
+allowed-tools: git, bash, git mcp, github mcp
 ---
-# MCP Git Commit Skill
+# Git Commit Skill
 
 ## 快速要点
-- 优先通过 MCP 的 `git.*` 命令处理版本控制，如果没有 git 相关 MCP，就使用 git 原生命令行进行操作。
+- **工具选择**：根据可用工具选择最合适的提交方式。优先使用 git 相关 MCP 工具（如 `git.*` 命令），如果没有则使用 git 原生命令行
+- **提交信息**：确保提交信息准确、清晰地反映变更内容，遵循约定式提交规范
+- **原子提交**：每次提交应包含一个逻辑上完整的变更，避免混合多个不相关的修改
+- **变更检查**：提交前使用 `git status` 和 `git diff` 检查变更内容
+- **工作流程**：适应不同的 git 工作流程（如 Git Flow、GitHub Flow 等）
 
 ## 提交信息（Commit Message）
 
@@ -43,4 +47,6 @@ allowed-tools: git mcp, github mcp, bash
 - 添加用户登录功能（用户要求中文时）
 
 ## 沟通建议
-- 在无法满足用户需求（无变更、冲突、MCP 报错）时，提供下一步指引（例如"请先解决冲突再通知我继续提交"）。
+- 在无法满足用户需求（无变更、冲突、工具报错等）时，提供下一步指引（例如"请先解决冲突再通知我继续提交"）
+- 明确告知用户当前状态和需要采取的行动
+- 提供具体的解决建议或替代方案
