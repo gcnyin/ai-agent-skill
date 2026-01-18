@@ -1,6 +1,7 @@
 ---
 name: git-mcp-commit
-description: 使用 git 相关 MCP 命令完成提交：查看状态/差异、选择文件、撰写信息并执行 commit；当用户要求"提交 commit"或"使用 git 提交"时触发。
+description: 使用git提交commit。当用户要求"提交 commit"、"git 提交"、"提交代码"时触发。
+allowed-tools: git mcp, github mcp, bash
 ---
 # MCP Git Commit Skill
 
